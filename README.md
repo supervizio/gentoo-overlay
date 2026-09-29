@@ -1,7 +1,8 @@
 # supervizio — Gentoo overlay
 
-> Written by supervizio's release pipeline. It holds no package until the first
-> supervizio release published since it was created; the steps below work from then on.
+> Mirrored from https://supervizio.github.io/agent/channels/ by `.github/workflows/sync.yml`.
+> It holds no package until supervizio publishes a release validated for this
+> channel; the steps below work from then on.
 
 A Portage repository with one package, `app-admin/supervizio-bin`: the
 [supervizio](https://supervizio.github.io/agent/) process supervisor and
