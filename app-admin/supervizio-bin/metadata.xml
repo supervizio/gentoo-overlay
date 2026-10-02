@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>noreply@superviz.io</email>
+		<name>supervizio</name>
+	</maintainer>
+	<longdescription lang="en">
+		supervizio is a process supervisor that can run as PID 1 in a
+		container or under the host's init, and an OpenTelemetry collector
+		agent for host metrics. This package installs the statically linked
+		binary a supervizio release publishes, with its OpenRC script and
+		systemd unit.
+	</longdescription>
+	<upstream>
+		<doc>https://supervizio.github.io/agent/</doc>
+		<bugs-to>https://github.com/supervizio/gentoo-overlay/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
