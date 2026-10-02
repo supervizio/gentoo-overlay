@@ -1,9 +1,5 @@
 # supervizio — Gentoo overlay
 
-> Mirrored from https://supervizio.github.io/agent/channels/ by `.github/workflows/sync.yml`.
-> It holds no package until supervizio publishes a release validated for this
-> channel; the steps below work from then on.
-
 A Portage repository with one package, `app-admin/supervizio-bin`: the
 [supervizio](https://supervizio.github.io/agent/) process supervisor and
 OpenTelemetry collector agent, from the statically linked binary each release
@@ -30,7 +26,7 @@ sync-uri = https://github.com/supervizio/gentoo-overlay.git
 
 then `emaint sync --repo supervizio` and `emerge --ask app-admin/supervizio-bin`.
 
-A prerelease is keyworded `~amd64`/`~arm64`; a release is stable.
+Only final releases reach this overlay, keyworded stable (`amd64`, `arm64`).
 
 ## Start it
 
@@ -57,8 +53,14 @@ profile.
 
 ## Where this comes from
 
-Nothing here is edited by hand. supervizio's release pipeline writes this
-repository when it publishes a release, and a release is published only after
-its end-to-end validation has installed this ebuild, against that release's
-own binary, on Gentoo with OpenRC as PID 1 — then probed, supervised and
-uninstalled it. Report problems in this repository's issues.
+Only `.github/`, this README and the LICENSE are maintained in this
+repository, through pull requests. Everything else is written by
+supervizio/agent's `deploy-repo.yml`, which serves at
+<https://supervizio.github.io/agent/channels/> the overlay of the newest final
+release whose end-to-end validation installed this very ebuild, against that
+release's own binary, on Gentoo with OpenRC as PID 1 (amd64 and arm64), then
+probed, supervised and uninstalled it — never a prerelease. Each time it
+deploys, it writes that overlay here as one commit on a `sync/` branch, opens
+a pull request so that this repository's `post-commit` gate judges the
+commit, and fast-forwards `main` to it once the gate has passed. Report
+problems in this repository's issues.
